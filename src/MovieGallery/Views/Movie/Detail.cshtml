@@ -1,16 +1,5 @@
 ﻿@{
     Layout = null;
-
-    var movietitle = "Sunshine";
-    var movieyear = 2007;
-    var descripion = "<p>Lot of fun, at the end <b>drunk</b>! Why?";
-    var artists = new string[] {
-        "Director: Danny Boyle",
-        "Writer: Alex Garland",
-        "Star: Cillian Murphy",
-        "Star: Rose Byrne",
-        "Star: Chris Evans"
-    };
 }
 
 <!DOCTYPE html>
@@ -22,7 +11,7 @@
 </head>
 <body>
     <div>
-        <h1>@movietitle</h1>
+        <h1>@ViewBag.movietitle</h1>
         <h2>Year: @movieyear</h2>
         <h5>Descriprion: </h5>
         <div>
