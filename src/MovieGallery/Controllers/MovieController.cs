@@ -11,15 +11,7 @@ namespace MovieGallery.Controllers
         public  ActionResult Detail()
         {
             ViewBag.Movietitle = "Sunshine";
-            ViewBag.Movieyear = 2007;
-            ViewBag.Descripion = "<p>Lot of fun, at the end <b>drunk</b>! Why?";
-            ViewBag.Artists = new string[] {
-                "Director: Danny Boyle",
-                "Writer: Alex Garland",
-                "Star: Cillian Murphy",
-                "Star: Rose Byrne",
-                "Star: Chris Evans"
-            };
+            
 
 
             return View();
