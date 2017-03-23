@@ -4,32 +4,28 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MovieGallery.Models;
+using MovieGallery.Data;
 
 namespace MovieGallery.Controllers
 {
     public class MoviesController : Controller
     {
-        public ActionResult Detail()
+        private MovieRepository _movieRepository = null;
+
+        public MoviesController()
         {
-            var movie = new Movie()
+            _movieRepository = new MovieRepository();
+        }
+
+        public ActionResult Detail(int? id)
+        {
+            if (id == null)
             {
-                MovieTitle = "Sunshine",
-                Year = 2007,
-                DescriptionHtml = "<p>Lot of fun, at the end <b>drunk</b>! Why?",
-                Artists = new Artist[]
-                {
-                    new Artist() {Name = "Danny Boyle", Role = "Director"},
-                    new Artist() {Name = "Cillian Murphy", Role = "Actor"},
-                    new Artist() {Name = "Rose Byrne", Role = "Actor"},
-                    new Artist() {Name = "Chris Evans", Role = "Actor"},
-                    new Artist() {Name = "Alex Garland", Role = "Writing"}
-                }
+                return HttpNotFound();
+            }
 
-            };
-            //movie.MovieTitle = "BlaBla";
+            var movie = _movieRepository.GetMovie((int)id);
             
-
-
             return View(movie);
             //return Redirect("/"); <-- weiterleitung zur startseite 
             
