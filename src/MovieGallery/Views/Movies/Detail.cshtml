@@ -12,7 +12,7 @@
         <div class="well">
             <h5><label>Series Title:</label>@Model.MovieTitle</h5>
             <h5><label>Jahr:</label>@Model.Year</h5>
-            <h5><label>Favorite:</label>@(Model.Favorite? "Yes":"No")</h5>
+            <h5><label>Must See:</label>@(Model.Favorite? " Yes":" No")</h5>
             @if (Model.Artists.Length > 0)
             {
                 <h5>Persons: </h5>
@@ -25,6 +25,11 @@
                     </ul>
                 </div>
             }
+            <h5><label>Genre:</label></h5>
+                @for(int i= 0; i< @Model.Genre.Length;i++)
+                {
+                    @("| " + Model.Genre[i] + " |")
+                }
         </div>
         <h5>Descriprion: </h5>
         <div>
