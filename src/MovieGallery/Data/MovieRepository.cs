@@ -40,10 +40,13 @@ namespace MovieGallery.Data
                     new Artist() {Name = "Ethan Hawke", Role = "Actor"},
                     new Artist() {Name = "Patricia Arquette", Role = "Actor"},
                     new Artist() {Name = "Richard Linklater", Role = "Writing"}
-               }
+               },
+                Favorite=false,
+                Genre= new string[] {"Drama"},
             },
             new Movie()
             {
+                Id=3,
                 MovieTitle = "Victoria",
                 Year = 2015,
                 DescriptionHtml = "<p>A young Spanish woman who has newly moved to Berlin finds her flirtation with a local guy turn potentially deadly as their night out with his friends reveals a dangerous secret.",
@@ -54,10 +57,13 @@ namespace MovieGallery.Data
                     new Artist() {Name = "Frederick Lau", Role = "Actor"},
                     new Artist() {Name = "Franz Rogowski", Role = "Actor"},
                     new Artist() {Name = "Sebastian Schipper", Role = "Writing"}
-               }
+               },
+               Genre =  new string[] {"Crime", "Drama", "Romance"}
             },
+
             new Movie()
             {
+                Id=4,
                 MovieTitle = "Suffragette",
                 Year = 2015,
                 DescriptionHtml = "The foot soldiers of the early feminist movement, women who were forced underground to pursue a dangerous game of cat and mouse with an increasingly brutal State.",
@@ -67,7 +73,23 @@ namespace MovieGallery.Data
                     new Artist() {Name = "Carey Mulligan", Role = "Actor"},
                     new Artist() {Name = "Anne-Marie Duff", Role = "Actor"},
                     new Artist() {Name = "Abi Morgan", Role = "Writing"}
-               }
+               },
+               Genre =  new string[] {" Biography"," Drama", "History" }
+            },
+
+            new Movie()
+            {
+                Id=5,
+                MovieTitle = "Gayby Baby",
+                Year = 2015,
+                DescriptionHtml = "GAYBY BABY follows the lives of four kids - Gus, Ebony, Matt and Graham - whose parents all happen to be gay. As they each wrestle with personal change, the outside world wrestles with the issue of marriage equality, and whether or not kids of same-sex families are at risk.",
+                Artists = new Artist[]
+               {
+                    new Artist() {Name = "Maya Newell", Role = "Director"},
+                    new Artist() {Name = "Matt Young", Role = "Actor"}
+               },
+               Genre =  new string[] { "Documentary", "Family", "LGBTIQ"},
+               Favorite=true
             },
 
 

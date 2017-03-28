@@ -29,7 +29,7 @@
             <h4>@Html.ActionLink(Model[i].DisplayText, "Detail", new { id = Model[i].Id })</h4>
            
             <a href="@Url.Action("Detail", new { id = Model[i].Id })">
-                <img src="@Model[i].CoverImageFileName"
+                <img src="/Images/@Model[i].CoverImageFileName"
                      alt="@Model[i].DisplayText"
                      class="img-responsive" />
             </a>
