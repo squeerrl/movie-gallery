@@ -23,6 +23,33 @@ namespace MovieGallery.Controllers
             return View(movies);
         }
 
+        public ActionResult GenreList(string genre__)
+        {
+            Movie[] movies = new Movie[_movieRepository.GetLength()];
+
+            int realSizeMovie = 0;
+
+            for(int iforMovie = 1; iforMovie <= _movieRepository.GetLength(); iforMovie++)
+            {
+                var movie = _movieRepository.GetMovie(iforMovie);
+
+                for (int iforGenres=0; iforGenres < movie.Genre.Length; iforGenres++)
+                {
+                    if (genre__.ToLower() == movie.Genre[iforGenres].ToLower())
+                    {
+                        movies[realSizeMovie] = _movieRepository.GetMovie(iforMovie);
+                        realSizeMovie++;
+                    }
+                }
+                
+            }
+            
+            Array.Resize(ref movies, realSizeMovie);
+            
+            return View(movies);
+        }
+
+
         public ActionResult Detail(int? id)
         {
             if (id == null)

@@ -14,7 +14,7 @@ namespace MovieGallery.Data
         {
             new Movie()
             {
-                Id = 1,
+                Id=1,
                 MovieTitle = "Sunshine",
                 Year = 2007,
                 DescriptionHtml = "<p>Lot of fun, at the end <b>drunk</b>! Why?",
@@ -25,7 +25,9 @@ namespace MovieGallery.Data
                     new Artist() {Name = "Rose Byrne", Role = "Actor"},
                     new Artist() {Name = "Chris Evans", Role = "Actor"},
                     new Artist() {Name = "Alex Garland", Role = "Writing"}
-               }
+               },
+               Favorite=false,
+               Genre = new string[]{"Adventure", "Sci-Fi", "Thriller"}
             },
             new Movie()
             {
@@ -74,7 +76,7 @@ namespace MovieGallery.Data
                     new Artist() {Name = "Anne-Marie Duff", Role = "Actor"},
                     new Artist() {Name = "Abi Morgan", Role = "Writing"}
                },
-               Genre =  new string[] {" Biography"," Drama", "History" }
+               Genre =  new string[] {"Biography","Drama", "History" }
             },
 
             new Movie()
@@ -94,6 +96,12 @@ namespace MovieGallery.Data
 
 
         };
+
+        internal int GetLength()
+        {
+            return 5;
+        }
+
         public Movie GetMovie(int id)
         {
             Movie movieToReturn = null;
