@@ -94,12 +94,45 @@ namespace MovieGallery.Data
                Favorite=true
             },
 
-
+            new Movie()
+            {
+                Id=6,
+                MovieTitle = "Finding Nemo",
+                Year = 2003,
+                DescriptionHtml = "After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home.",
+                Artists = new Artist[]
+               {
+                    new Artist() {Name = "Andrew Stanton", Role = "Director"},
+                    new Artist() {Name = "Lee Unkrich", Role = "Co-Director"},
+                    new Artist() {Name = "Ellen DeGeneres", Role = "Voice"},
+                    new Artist() {Name = "Alexander Gould", Role = "Voice"},
+                    new Artist() {Name = "Albert Brooks", Role = "Voice"}
+               },
+               Genre =  new string[] { "Animation", "Adventure", "Comedy"},
+               Favorite=false
+            },
+            new Movie()
+            {
+                Id=7,
+                MovieTitle = "Titanic",
+                Year = 1997,
+                DescriptionHtml = "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+                Artists = new Artist[]
+               {
+                    new Artist() {Name = "James Cameron", Role = "Director"},
+                    new Artist() {Name = "James Cameron", Role = "Writer"},
+                    new Artist() {Name = "Leonardo DiCaprio", Role = "Actor"},
+                    new Artist() {Name = "Kate Winslet", Role = "Actor"}
+               },
+               Genre =  new string[] { "Drama", "Romance"},
+               Favorite=true
+            }
         };
 
         internal int GetLength()
         {
-            return 5;
+            ///TODO code
+            return _movies.Length;
         }
 
         public Movie GetMovie(int id)

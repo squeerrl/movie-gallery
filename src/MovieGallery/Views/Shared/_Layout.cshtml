@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Schub Schub - Movie List All</title>
+    <title>@ViewBag.Title - Movie List All</title>
     <link href="~/Content/site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
@@ -17,11 +17,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("schub schub", "Index", "Movies", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("My Movie Database", "Index", "Movies", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <!-- Add menu items here -->
+                    
                 </ul>
             </div>
         </div>
@@ -35,6 +35,16 @@
             </div>
         </div>
     }
+
+    @if (ViewBag.ShowBackBar == null)
+    {
+        <div class="backbar">
+            <div class="container">
+                @Html.ActionLink("Sehenswert", "MustSeenList", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    }
+   
 
     <div class="container body-content">
         @RenderBody()

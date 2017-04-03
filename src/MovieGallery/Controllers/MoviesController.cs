@@ -49,6 +49,29 @@ namespace MovieGallery.Controllers
             return View(movies);
         }
 
+        public ActionResult MustSeenList()
+        {
+            Movie[] movies = new Movie[_movieRepository.GetLength()];
+
+            int realSizeMovie = 0;
+
+
+
+            for (int i = 1; i <= _movieRepository.GetLength(); i++)
+            {
+                var movie = _movieRepository.GetMovie(i);
+
+                if (movie.Favorite)
+                {
+                    movies[realSizeMovie] = _movieRepository.GetMovie(i);
+                    realSizeMovie++;
+                }
+            }
+
+            Array.Resize(ref movies, realSizeMovie);
+
+            return View(movies);
+        }
 
         public ActionResult Detail(int? id)
         {

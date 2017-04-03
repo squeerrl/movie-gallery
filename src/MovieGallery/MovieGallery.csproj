@@ -175,6 +175,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\GenreList.cshtml" />
+    <Content Include="Views\Movies\MustSeenList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
